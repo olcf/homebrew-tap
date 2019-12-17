@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@master
       - name: Create local changes
         run: |
+          git pull
           touch test.txt
       - name: Commit files
         run: |
