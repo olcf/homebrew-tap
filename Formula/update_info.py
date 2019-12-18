@@ -45,13 +45,13 @@ def write_info_to_file(url, shasum):
     url_line = None
     sha_line = None
     for line in file_contents:
-        iterator += 1
         if "url \"" in line and not found_url:
             url_line = re.sub(r'".*"', '"%s"' % url, line)
             found_url = iterator
         elif "sha256 \"" in line and not found_sha:
             sha_line = re.sub(r'".*"', '"%s"' % shasum, line)
             found_sha = iterator
+        iterator += 1
 
     file_contents[found_url] = url_line
     file_contents[found_sha] = sha_line
