@@ -4,12 +4,13 @@ Ruby is a useless language that I cant get working on my computer, this is a sho
 be used to fix the packaging info; github api doesn't seem to be showing our release packages,
 so beautifulsoup
 """
+import re
 import hashlib
 import requests
 from bs4 import BeautifulSoup as bs
 
 PACKAGE = 'pkpass.tar.gz'
-PACKAGE_INFO = 'package_info'
+PACKAGE_INFO = 'pkpass.rb'
 
 def get_current_sha():
     """ Checks current sha256 hash"""
@@ -35,8 +36,28 @@ def get_pkpass(url):
 
 def write_info_to_file(url, shasum):
     """write url and shasum separated by newline to file"""
-    with open(PACKAGE_INFO, "w") as file:
-        file.writelines([url, "\n", shasum])
+    with open(PACKAGE_INFO, "r") as infile:
+        file_contents = infile.readlines()
+
+    found_url = False
+    found_sha = False
+    iterator = 0
+    url_line = None
+    sha_line = None
+    for line in file_contents:
+        iterator += 1
+        if "url \"" in line and not found_url:
+            url_line = re.sub(r'".*"', '"%s"' % url, line)
+            found_url = iterator
+        elif "sha256 \"" in line and not found_sha:
+            sha_line = re.sub(r'".*"', '"%s"' % shasum, line)
+            found_sha = iterator
+
+    file_contents[found_url] = url_line
+    file_contents[found_sha] = sha_line
+
+    with open(PACKAGE_INFO, "r+") as outfile:
+        outfile.writelines(file_contents)
 
 def main():
     """Controller"""
