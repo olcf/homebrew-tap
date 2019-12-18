@@ -1,10 +1,10 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.2.1.tar.gz"
-  sha256 "f10133eb921fbb7a79d8c07e54df40ce9b2a3fef1584022f4c28e664d9d8bcb5"
-
-  depends_on "libyaml"
+  url "http://idontcare"
+  url "https://github.com/olcf/pkpass/archive/2.2.4.tar.gz"
+  sha256 "61a30f2c164e2e947bba71ee504c346894cfff2b334729888df7cdf687dcdc47"
+  sha256 "61a30f2c164e2e947bba71ee504c346894cfff2b334729888df7cdf687dcdc47"
   depends_on "openssl"
   depends_on "python"
 

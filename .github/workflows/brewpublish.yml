@@ -1,0 +1,46 @@
+---
+name: Brew Update
+on:
+  schedule:
+    - cron: '0 12 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: [3.7]
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: setup python
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Create local changes
+        run: |
+          python -m pip install --upgrade pip
+          cd Formula
+          pip install -r requirements.txt
+          python update_info.py
+
+      - name: Commit files
+        run: |
+          git status > /tmp/git_out
+          if  grep -q "nothing to commit" /tmp/git_out ; then
+            echo "No new changes"
+          else
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add Formula/pkpass.rb
+            git commit -m "updating package_info" -a
+          fi
+
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ngin_automation
