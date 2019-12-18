@@ -7,7 +7,7 @@ I opened a feature request for getting out of python dependency hell, and it was
 
 1) Runner creates a virtualenv and installs `pkpass-olcf`
 2) Runner freezes dependencies needed in `Formula/requirements_pkpass.txt`
-3) Runner installs setups up env for `Formula/update_info.py`
+3) Runner sets up env for `Formula/update_info.py`
 4) Runner runs `update_info.py` which generates `Formula/pkpass.rb`
 5) Runner checks if there are any git changes if so commits and pushes
 
