@@ -1,9 +1,8 @@
 ---
 name: Brew Update
-on: [push]
-# on:
-#   schedule:
-#     - cron: '0 0 * * 1'
+on:
+  schedule:
+    - cron: '0 12 * * *'
 
 jobs:
   build:
