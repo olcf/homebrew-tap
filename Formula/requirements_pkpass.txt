@@ -1,0 +1,13 @@
+certifi
+cffi
+chardet
+colored
+cryptography
+exrex
+future
+idna
+pycparser
+pyperclip
+PyYAML
+six
+utilitybelt
