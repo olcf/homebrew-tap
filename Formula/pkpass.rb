@@ -1,8 +1,10 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.2.1.tar.gz"
-  sha256 "f10133eb921fbb7a79d8c07e54df40ce9b2a3fef1584022f4c28e664d9d8bcb5"
+  pack_info = File.read('package_info')
+
+  url pack_info[0]
+  sha256 pack_info[1]
 
   depends_on "libyaml"
   depends_on "openssl"

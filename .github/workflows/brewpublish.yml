@@ -8,18 +8,36 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: [3.7]
+
     steps:
       - uses: actions/checkout@master
+
       - name: Create local changes
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
         run: |
-          git pull
-          touch test.txt
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          cd Formula
+          python update_info.py
+
       - name: Commit files
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add test.txt
-          git commit -m "Add changes" -a
+          git status > /tmp/git_out
+          if  grep -q "nothing to commit" /tmp/git_out ; then
+            echo "No new changes"
+          else
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add Formula/package_info
+            git commit -m "updating package_info" -a
+          fi
+
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
