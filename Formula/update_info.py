@@ -46,15 +46,14 @@ def close_class():
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install_and_link buildpath
     virtualenv_install_with_resources
-    venv.pip_install "pyseltongue"
-
   end
 end
 """
 
-def get_url_and_sha(package_name):
+def get_url_and_sha(package_name, version=None):
     """return url and sha as tuple"""
-    name = "https://pypi.org/project/%s/" % package_name.strip()
+    resource = "%s/%s/" % (package_name.strip(), version.strip()) if version else "%s/" % package_name.strip()
+    name = "https://pypi.org/project/%s" % resource
     html_page = requests.get(name).text
     bs_parse = bs(html_page, 'html.parser')
     parsed = bs_parse.find_all(class_="table table--downloads")[0].find_all('a')
@@ -79,8 +78,9 @@ def build_full_file():
     file_contents = init_class(pkpass_url, sha256(PACKAGE))
     with open('requirements_pkpass.txt') as pkreq:
         for line in pkreq.readlines():
-            url, sha = get_url_and_sha(line.strip())
-            file_contents += add_resource(line.strip(), url, sha) + "\n"
+            package, version = line.strip().split("==")
+            url, sha = get_url_and_sha(package, version)
+            file_contents += add_resource(package, url, sha) + "\n"
     file_contents += close_class()
 
     with open(PACKAGE_INFO, 'w') as pack_info:

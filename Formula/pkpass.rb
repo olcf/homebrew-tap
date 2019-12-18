@@ -8,19 +8,9 @@ class Pkpass < Formula
   depends_on "openssl"
   depends_on "python"
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/41/bf/9d214a5af07debc6acf7f3f257265618f1db242a3f8e49a9b516f24523a6/certifi-2019.11.28.tar.gz"
-    sha256 "25b64c7da4cd7479594d035c08c2d809eb4aab3a26e5a990ea98cc450c320f1f"
-  end
-
   resource "cffi" do
     url "https://files.pythonhosted.org/packages/2d/bf/960e5a422db3ac1a5e612cb35ca436c3fc985ed4b7ed13a1b4879006f450/cffi-1.13.2.tar.gz"
     sha256 "599a1e8ff057ac530c9ad1778293c665cb81a791421f46922d80a86473c13346"
-  end
-
-  resource "chardet" do
-    url "https://files.pythonhosted.org/packages/fc/bb/a5768c230f9ddb03acc9ef3f0d4a3cf93462473795d18e9535498c8f929d/chardet-3.0.4.tar.gz"
-    sha256 "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"
   end
 
   resource "colored" do
@@ -43,9 +33,9 @@ class Pkpass < Formula
     sha256 "b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"
   end
 
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/ad/13/eb56951b6f7950cadb579ca166e448ba77f9d24efc03edd7e55fa57d04b7/idna-2.8.tar.gz"
-    sha256 "c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407"
+  resource "pkpass-olcf" do
+    url "https://files.pythonhosted.org/packages/8e/0e/9e6c57ad9a4731f5366959ea0f074d627484d48c2855a307bd4de84edd94/pkpass-olcf-2.2.4.tar.gz"
+    sha256 "1414e95aeb6e5b997d919003642c3abb0d9b9fac25a0aa11f6c58fe7a02b71a0"
   end
 
   resource "pycparser" do
@@ -73,6 +63,11 @@ class Pkpass < Formula
     sha256 "dafdb6a2dbb32e71d67a9cd35afd7c2e4993ec094e7ddb547df4cf46788770a4"
   end
 
+  resource "pyseltongue" do
+    url "https://files.pythonhosted.org/packages/20/c8/5d7ae7fd7f790901a6777d5a5b50bca9fc7d27dfc23004b5cfe7c82bc4b2/pyseltongue-0.3.3.tar.gz"
+    sha256 "5910ba6d61a5446fc219dffd143e13d6f7c05451f70005f074d348e1d1b638a5"
+  end
+
   def install
     ENV.prepend_path "PATH", Formula["python"].opt_libexec/"bin"
     ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version <= :sierra
@@ -82,7 +77,5 @@ class Pkpass < Formula
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install_and_link buildpath
     virtualenv_install_with_resources
-    venv.pip_install "pyseltongue"
-
   end
 end
