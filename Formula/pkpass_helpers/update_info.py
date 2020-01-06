@@ -10,7 +10,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 
 PACKAGE = '/tmp/pkpass.tar.gz'
-PACKAGE_INFO = 'pkpass.rb'
+PACKAGE_INFO = '../pkpass.rb'
 
 def init_class(pk_url, pk_sha):
     """return base information string"""
