@@ -49,8 +49,8 @@ class Pkpass < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/8d/c9/e5be955a117a1ac548cdd31e37e8fd7b02ce987f9655f5c7563c656d5dcb/PyYAML-5.2.tar.gz"
-    sha256 "c0ee8eca2c582d29c3c2ec6e2c4f703d1b7f1fb10bc72317355a746057e7346c"
+    url "https://files.pythonhosted.org/packages/3d/d9/ea9816aea31beeadccd03f1f8b625ecf8f645bd66744484d162d84803ce5/PyYAML-5.3.tar.gz"
+    sha256 "e9f45bd5b92c7974e59bcd2dcc8631a6b6cc380a904725fce7bc08872e691615"
   end
 
   resource "six" do
@@ -64,8 +64,8 @@ class Pkpass < Formula
   end
 
   resource "pyseltongue" do
-    url "https://files.pythonhosted.org/packages/20/c8/5d7ae7fd7f790901a6777d5a5b50bca9fc7d27dfc23004b5cfe7c82bc4b2/pyseltongue-0.3.3.tar.gz"
-    sha256 "5910ba6d61a5446fc219dffd143e13d6f7c05451f70005f074d348e1d1b638a5"
+    url "https://files.pythonhosted.org/packages/d0/f5/3b656493616752c2edff15e3103cc0a1393d1a43f30a8aea33b39f172e45/pyseltongue-0.3.5.tar.gz"
+    sha256 "61d547d089c84a87ec8a757e75909d39b892dad9dac9d34d5cf77272ed1fb5cb"
   end
 
   def install

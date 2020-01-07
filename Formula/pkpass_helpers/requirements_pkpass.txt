@@ -6,7 +6,7 @@ future==0.18.2
 pkpass-olcf==2.2.4
 pycparser==2.19
 pyperclip==1.7.0
-PyYAML==5.2
+PyYAML==5.3
 six==1.13.0
 utilitybelt==0.2.6
-pyseltongue==0.3.3
+pyseltongue==0.3.5
