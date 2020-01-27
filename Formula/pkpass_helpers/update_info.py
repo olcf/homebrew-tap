@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 """
 Ruby is a useless language that I cant get working on my computer, this is a short module that will
-be used to fix the packaging info; github api doesn't seem to be showing our release packages,
-so beautifulsoup
+be used to fix the packaging info beautifulsoup is used for pypi stuff...
 """
-import re
 import hashlib
 import requests
 from bs4 import BeautifulSoup as bs
@@ -35,13 +33,13 @@ def add_resource(name, url, sha256_sum):
 
 def close_class():
     """return closing statement string"""
-    MacOS_sdk_path = "{MacOS.sdk_path}"
+    macos_sdk_path = "{MacOS.sdk_path}"
     return f"""
   def install
     ENV.prepend_path "PATH", Formula["python"].opt_libexec/"bin"
     ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version <= :sierra
     ENV.append_to_cflags "-fno-stack-check" if DevelopmentTools.clang_build_version >= 1010
-    ENV.prepend "CPPFLAGS", "-I#{MacOS_sdk_path}/usr/include/ffi"
+    ENV.prepend "CPPFLAGS", "-I#{macos_sdk_path}/usr/include/ffi"
 
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install_and_link buildpath
@@ -52,7 +50,10 @@ end
 
 def get_url_and_sha(package_name, version=None):
     """return url and sha as tuple"""
-    resource = "%s/%s/" % (package_name.strip(), version.strip()) if version else "%s/" % package_name.strip()
+    resource = "%s/%s/" % (
+        package_name.strip(),
+        version.strip()
+    ) if version else "%s/" % package_name.strip()
     name = "https://pypi.org/project/%s" % resource
     html_page = requests.get(name).text
     bs_parse = bs(html_page, 'html.parser')
@@ -66,13 +67,14 @@ def get_url_and_sha(package_name, version=None):
             hash_anchor = parsed[parsed.index(package) + 1]['href'].split("#")[1]
 
     hash_div = bs_parse.find(id=hash_anchor)
-    for tr in hash_div.find_all('tr'):
-        header = tr.find('th')
+    for table_row in hash_div.find_all('tr'):
+        header = table_row.find('th')
         if header.text == "SHA256":
-            ret_hash = tr.find_all('code')[0].text
+            ret_hash = table_row.find_all('code')[0].text
     return (ret_url, ret_hash)
 
 def build_full_file():
+    """Create the full rb file"""
     pkpass_url = get_newest_pkpass_url()
     get_url_to_file(pkpass_url, PACKAGE)
     file_contents = init_class(pkpass_url, sha256(PACKAGE))
@@ -105,14 +107,10 @@ def get_url_to_file(url, file_name):
 
 def get_newest_pkpass_url():
     """Get newest package"""
-    html_page = requests.get("https://github.com/olcf/pkpass/releases").text
-    parsed = bs(html_page, 'html.parser').find_all(class_='release-entry')[0]
-    parsed = parsed.find_all(class_='d-block py-1 py-md-2 Box-body px-2')
-    href = None
-    for package in parsed:
-        if package.find_all('a')[0]['href'].endswith("tar.gz"):
-            href = "https://github.com%s" % package.find_all('a')[0]['href']
-    return href
+    tag_name = requests.get(
+        "https://api.github.com/repos/olcf/pkpass/releases/latest"
+    ).json()["tag_name"]
+    return f"https://github.com/olcf/pkpass/archive/{tag_name}.tar.gz"
 
 def main():
     """Controller"""
