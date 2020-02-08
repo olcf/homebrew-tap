@@ -1,16 +1,16 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.2.6.tar.gz"
-  sha256 "faebc7cfdb4479699e87ed85c50f588b639568f805ad9c8eaecdde7ebeccfc75"
+  url "https://github.com/olcf/pkpass/archive/2.2.7.tar.gz"
+  sha256 "ed53063fedfd6269ad02d9e141a6a6da09bcd59409365d86230f035d3bdc04ed"
 
   depends_on "libyaml"
   depends_on "openssl"
   depends_on "python"
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2d/bf/960e5a422db3ac1a5e612cb35ca436c3fc985ed4b7ed13a1b4879006f450/cffi-1.13.2.tar.gz"
-    sha256 "599a1e8ff057ac530c9ad1778293c665cb81a791421f46922d80a86473c13346"
+    url "https://files.pythonhosted.org/packages/05/54/3324b0c46340c31b909fcec598696aaec7ddc8c18a63f2db352562d3354c/cffi-1.14.0.tar.gz"
+    sha256 "2d384f4a127a15ba701207f7639d94106693b6cd64173d6c8988e2c25f3ac2b6"
   end
 
   resource "colored" do
@@ -34,8 +34,8 @@ class Pkpass < Formula
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/a1/59/5be1b3facdbeebee77a773bee28abf7d8602a2de6d3e088e8b862ebde223/pkpass-olcf-2.2.6.tar.gz"
-    sha256 "fe6cc98e5c4c4e7d9b83cf01375494f0250fc8e32848e194a5467132ef9022fe"
+    url "https://files.pythonhosted.org/packages/67/9d/7df3ee67851d767a66da6b74d263031beb5032f214e62ddd72e2708e3508/pkpass-olcf-2.2.7.tar.gz"
+    sha256 "04c9d954a2e6f7a161ed744b352790062e6d2c5530811128b710fc740297b91a"
   end
 
   resource "pycparser" do
