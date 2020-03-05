@@ -4,7 +4,7 @@ cryptography==2.8
 exrex==0.10.5
 future==0.18.2
 pkpass-olcf==2.2.7
-pycparser==2.19
+pycparser==2.20
 pyperclip==1.7.0
 PyYAML==5.3
 six==1.14.0
