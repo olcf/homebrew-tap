@@ -2,8 +2,7 @@ cffi==1.14.0
 colored==1.4.2
 cryptography==2.9
 exrex==0.10.5
-future==0.18.2
-pkpass-olcf==2.2.7
+pkpass-olcf==2.2.8
 pycparser==2.20
 pyperclip==1.8.0
 PyYAML==5.3.1
