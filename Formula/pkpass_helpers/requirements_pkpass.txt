@@ -1,6 +1,6 @@
 cffi==1.14.0
 colored==1.4.2
-cryptography==2.9.1
+cryptography==2.9.2
 exrex==0.10.5
 pkpass-olcf==2.3.0
 pycparser==2.20
