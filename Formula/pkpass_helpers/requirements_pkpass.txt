@@ -7,6 +7,6 @@ pkpass-olcf==2.4.4
 pycparser==2.20
 pyperclip==1.8.0
 PyYAML==5.3.1
-six==1.14.0
+six==1.15.0
 utilitybelt==0.2.6
 pyseltongue==0.3.5
