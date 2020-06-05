@@ -1,8 +1,8 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.4.4.tar.gz"
-  sha256 "92aa72703baeedd7d8b1f974a66e636860e7a500c3e1b838f43dc38981b0f041"
+  url "https://github.com/olcf/pkpass/archive/2.4.5.tar.gz"
+  sha256 "cc33bdf047a0b4da2dba5486b6b9d5dc036518c3af8e94924a5ab5d72f8d0b45"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -34,8 +34,8 @@ class Pkpass < Formula
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/34/68/aec6cdb0b723ae6ce2bc20c3c4af60a0ef1b00254301bc86899f761596bd/pkpass-olcf-2.4.4.tar.gz"
-    sha256 "c6fe04e52ba927a7d398fa86e347a24c5fcae9df4c8e659b5dc01fad6f41c48f"
+    url "https://files.pythonhosted.org/packages/60/6b/f171f875c0d819a69e3d7312acb9a21cd57cf77555b05fd0b4f7716f2c88/pkpass-olcf-2.4.5.tar.gz"
+    sha256 "d3c27b6e471d58c34838b7768de9498881430caec660491c40ee8bfd9936120e"
   end
 
   resource "pycparser" do
@@ -46,6 +46,11 @@ class Pkpass < Formula
   resource "pyperclip" do
     url "https://files.pythonhosted.org/packages/f6/5b/55866e1cde0f86f5eec59dab5de8a66628cb0d53da74b8dbc15ad8dabda3/pyperclip-1.8.0.tar.gz"
     sha256 "b75b975160428d84608c26edba2dec146e7799566aea42c1fe1b32e72b6028f2"
+  end
+
+  resource "python-dateutil" do
+    url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
+    sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
   end
 
   resource "PyYAML" do
