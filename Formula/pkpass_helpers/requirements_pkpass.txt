@@ -13,7 +13,7 @@ chevron==0.13.1
 click==7.1.2
 colored==1.4.2
 cookiecutter==1.6.0
-cryptography==2.9.2
+cryptography==3.0
 dateparser==0.7.6
 docker==4.2.2
 docutils==0.15.2
