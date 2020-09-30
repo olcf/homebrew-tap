@@ -3,7 +3,7 @@ colored==1.4.2
 cryptography==3.1.1
 exrex==0.10.5
 pem==20.1.0
-pkpass-olcf==2.4.6
+pkpass-olcf==2.4.8
 pycparser==2.20
 pyperclip==1.8.0
 python-dateutil==2.8.1
