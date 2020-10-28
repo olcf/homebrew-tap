@@ -1,8 +1,8 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.5.0.tar.gz"
-  sha256 "bb7c0c1eda1964fb526474589ee30f24ad122624a386d9d655532eb595903665"
+  url "https://github.com/olcf/pkpass/archive/2.5.2.tar.gz"
+  sha256 "16ecab6b997abb5c2dd03d9e046a9f1e31d640d247d4d353e18897a64a94dc96"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -19,8 +19,8 @@ class Pkpass < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/1c/15/aceb9a2535c9fa805316b49e42fde0a83d1a0492b4e3608a4a5dc9b04b46/cryptography-3.2.tar.gz"
-    sha256 "e4789b84f8dedf190148441f7c5bfe7244782d9cbb194a36e17b91e7d3e1cca9"
+    url "https://files.pythonhosted.org/packages/94/5c/42de91c7fbdb817b2d9a4e64b067946eb38a4eb36c1a09c96c87a0f86a82/cryptography-3.2.1.tar.gz"
+    sha256 "d3d5e10be0cf2a12214ddee45c6bd203dab435e3d83b4560c03066eda600bfe3"
   end
 
   resource "exrex" do
@@ -34,8 +34,8 @@ class Pkpass < Formula
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/8b/57/94649759e83bbe55430a532b6cf4a5601cbee66070075a64a2bee618cfa7/pkpass-olcf-2.5.0.tar.gz"
-    sha256 "cb90dc705f986440371ed978cf94572879b06b7b8a59846510a969b08ea492ca"
+    url "https://files.pythonhosted.org/packages/b3/d0/fb2957dc764574359ba1e819e6cfa2325bb981f17af798238312bf1c905b/pkpass-olcf-2.5.2.tar.gz"
+    sha256 "91752b8f825212b5ac40103368dbc9d1f1f63609bb5310f65581cb2e8f82616a"
   end
 
   resource "pycparser" do
@@ -69,8 +69,8 @@ class Pkpass < Formula
   end
 
   resource "pyseltongue" do
-    url "https://files.pythonhosted.org/packages/d0/f5/3b656493616752c2edff15e3103cc0a1393d1a43f30a8aea33b39f172e45/pyseltongue-0.3.5.tar.gz"
-    sha256 "61d547d089c84a87ec8a757e75909d39b892dad9dac9d34d5cf77272ed1fb5cb"
+    url "https://files.pythonhosted.org/packages/5e/cd/0f69852c47aa0f89e3f6edbdbd043ec27173a006bc4990788822cc0239e0/pyseltongue-0.3.6.tar.gz"
+    sha256 "631264b199965d78b0305cfd2a12e01ff3e4e660d0bec0aa88663b041eda0e55"
   end
 
   def install
