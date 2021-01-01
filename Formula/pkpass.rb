@@ -69,8 +69,8 @@ class Pkpass < Formula
   end
 
   resource "pyseltongue" do
-    url "https://files.pythonhosted.org/packages/5e/cd/0f69852c47aa0f89e3f6edbdbd043ec27173a006bc4990788822cc0239e0/pyseltongue-0.3.6.tar.gz"
-    sha256 "631264b199965d78b0305cfd2a12e01ff3e4e660d0bec0aa88663b041eda0e55"
+    url "https://files.pythonhosted.org/packages/7f/7a/80aaeee74e5039b367e2c9b9020d98454f4509d8e37eb25b891f5873c9a4/pyseltongue-0.3.7.tar.gz"
+    sha256 "6c6edace76cbeba41f570e678374b915458213a49ca44f90cdc6b0c718cb5e56"
   end
 
   def install
