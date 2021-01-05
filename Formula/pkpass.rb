@@ -2,7 +2,7 @@ class Pkpass < Formula
   include Language::Python::Virtualenv
 
   url "https://github.com/olcf/pkpass/archive/2.5.4.tar.gz"
-  sha256 "eb7f1ab74cf69902f1a501e01c85c3cddf626aec5288c629be10f8a847872ad1"
+  sha256 "aaa474d8cc1357739db896afe8f72855b1c8bbdb024524e9cea5be5450f652f7"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -69,8 +69,8 @@ class Pkpass < Formula
   end
 
   resource "pyseltongue" do
-    url "https://files.pythonhosted.org/packages/7f/7a/80aaeee74e5039b367e2c9b9020d98454f4509d8e37eb25b891f5873c9a4/pyseltongue-0.3.7.tar.gz"
-    sha256 "6c6edace76cbeba41f570e678374b915458213a49ca44f90cdc6b0c718cb5e56"
+    url "https://files.pythonhosted.org/packages/c2/a7/c04f531ea1144cfe1c40a0ff1d6a9885cb7142466f481d59653c219a81a8/pyseltongue-1.0.0.tar.gz"
+    sha256 "6975d656214d3524b3ede9f204daa77a81ce686f8ae45f78b841ef23f23cf5d6"
   end
 
   def install
