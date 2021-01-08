@@ -1,8 +1,8 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.5.4.tar.gz"
-  sha256 "aaa474d8cc1357739db896afe8f72855b1c8bbdb024524e9cea5be5450f652f7"
+  url "https://github.com/olcf/pkpass/archive/2.6.0.tar.gz"
+  sha256 "cde8d06dfcee955c7398fe0bf07c1240e58994bac967de289ed6e2972a703d37"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -34,8 +34,8 @@ class Pkpass < Formula
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/76/53/3b39e5ee6bdfa43447c4bb33adf5a93f467716e5df1ab1787cc39d8cf28f/pkpass-olcf-2.5.4.tar.gz"
-    sha256 "aaa641f57d3e7d82621a279f0a63d26a79300e1946f0ed582108100aad839144"
+    url "https://files.pythonhosted.org/packages/2a/09/e251b583f8f688bdaca19e04b3cac27a962f302ca4e14a10bff9ebc44525/pkpass-olcf-2.6.0.tar.gz"
+    sha256 "f8c623fd632365df9814fb4f164c638478a3cf688758379d038c66e631f801eb"
   end
 
   resource "pycparser" do
@@ -61,6 +61,11 @@ class Pkpass < Formula
   resource "six" do
     url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
     sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
+  end
+
+  resource "tqdm" do
+    url "https://files.pythonhosted.org/packages/9c/97/6627aaf69c42a41d0d22a54ad2bf420290e07da82448823dcd6851de427e/tqdm-4.55.1.tar.gz"
+    sha256 "556c55b081bd9aa746d34125d024b73f0e2a0e62d5927ff0e400e20ee0a03b9a"
   end
 
   resource "utilitybelt" do
