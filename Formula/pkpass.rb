@@ -54,8 +54,8 @@ class Pkpass < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/70/1b/9546dfbd01b4cb017aa54676e66e6f5c62d5a50d20f9140d3bb9fe0e7dc5/PyYAML-5.4b1.tar.gz"
-    sha256 "1dd4545a58abb94b9b623d7658109d2cb66dc09f3389025defc1ca17b9557884"
+    url "https://files.pythonhosted.org/packages/38/81/586bed445a69c8368fad395f0ea73b604a5269bbdc2b5202b5d83b844365/PyYAML-5.4b2.tar.gz"
+    sha256 "fa995979ff3037b5989812f320fc7f84564f43a1e23b6348ab343c576fe2409d"
   end
 
   resource "six" do

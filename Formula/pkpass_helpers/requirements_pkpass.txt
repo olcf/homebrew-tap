@@ -7,7 +7,7 @@ pkpass-olcf==2.6.0
 pycparser==2.20
 pyperclip==1.8.1
 python-dateutil==2.8.1
-PyYAML==5.4b1
+PyYAML==5.4b2
 six==1.15.0
 tqdm==4.56.0
 utilitybelt==0.2.6
