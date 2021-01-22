@@ -29,8 +29,8 @@ class Pkpass < Formula
   end
 
   resource "pem" do
-    url "https://files.pythonhosted.org/packages/36/bb/c761f992d2982320ccf5e8ffd57c4997a53beaa3af706bb4129e406c822e/pem-20.1.0.tar.gz"
-    sha256 "2763631a5ffe55f1f21fa34abafdba174a8eeb670d84f66dcfd7a523b44608f6"
+    url "https://files.pythonhosted.org/packages/ae/f8/43fd26ac249cf81350d4d5a68b18fa51e158b93476f7fa5e2f653865ecf4/pem-21.1.0.tar.gz"
+    sha256 "dddbc395740ed3fcd2940068d190e7071e8b12a9d57b76a2f080e7ca8397b310"
   end
 
   resource "pkpass-olcf" do
