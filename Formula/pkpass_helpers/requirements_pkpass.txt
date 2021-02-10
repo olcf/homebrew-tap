@@ -1,6 +1,6 @@
 cffi==1.14.4
 colored==1.4.2
-cryptography==3.4.3
+cryptography==3.4.4
 exrex==0.10.5
 pem==21.1.0
 pkpass-olcf==2.6.0
@@ -9,6 +9,6 @@ pyperclip==1.8.1
 python-dateutil==2.8.1
 PyYAML==5.4.1
 six==1.15.0
-tqdm==4.56.0
+tqdm==4.56.1
 utilitybelt==0.2.6
 pyseltongue==1.0.0
