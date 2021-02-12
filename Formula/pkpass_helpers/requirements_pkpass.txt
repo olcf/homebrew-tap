@@ -1,4 +1,4 @@
-cffi==1.14.4
+cffi==1.14.5
 colored==1.4.2
 cryptography==3.4.4
 exrex==0.10.5
