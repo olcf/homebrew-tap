@@ -19,8 +19,8 @@ class Pkpass < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/27/5a/007acee0243186123a55423d49cbb5c15cb02d76dd1b6a27659a894b13a2/cryptography-3.4.4.tar.gz"
-    sha256 "ee5e19f0856b6fbbdbab15c2787ca65d203801d2d65d0b8de6218f424206c848"
+    url "https://files.pythonhosted.org/packages/60/6d/b32368327f600a12e59fb51a904fc6200dd7e65e953fd6fc6ae6468e3423/cryptography-3.4.5.tar.gz"
+    sha256 "4f6761a82b51fe02cda8f45af1c2f698a10f50003dc9c2572d8a49eda2e6d35b"
   end
 
   resource "exrex" do
