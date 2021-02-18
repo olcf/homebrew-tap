@@ -64,8 +64,8 @@ class Pkpass < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/d4/2a/99ac62cb012d81ffd96a2ddd9eba54d942c56f9244feb58b6a9a49d547d8/tqdm-4.56.2.tar.gz"
-    sha256 "11d544652edbdfc9cc41aa4c8a5c166513e279f3f2d9f1a9e1c89935b51de6ff"
+    url "https://files.pythonhosted.org/packages/af/34/0fb7d9ce9f84244618e0acf8355f944e27107d617534e07978cb2221a59b/tqdm-4.57.0.tar.gz"
+    sha256 "65185676e9fdf20d154cffd1c5de8e39ef9696ff7e59fe0156b1b08e468736af"
   end
 
   resource "utilitybelt" do
