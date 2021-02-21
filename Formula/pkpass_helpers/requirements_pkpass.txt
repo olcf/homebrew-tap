@@ -5,7 +5,7 @@ exrex==0.10.5
 pem==21.1.0
 pkpass-olcf==2.6.0
 pycparser==2.20
-pyperclip==1.8.1
+pyperclip==1.8.2
 python-dateutil==2.8.1
 PyYAML==5.4.1
 six==1.15.0
