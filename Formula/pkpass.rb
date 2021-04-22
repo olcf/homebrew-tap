@@ -2,7 +2,7 @@ class Pkpass < Formula
   include Language::Python::Virtualenv
 
   url "https://github.com/olcf/pkpass/archive/2.6.0.tar.gz"
-  sha256 "cde8d06dfcee955c7398fe0bf07c1240e58994bac967de289ed6e2972a703d37"
+  sha256 "b1d3a46915c8570ee1548f34e168a08dd953300595e964db5ae875ccbbd21eeb"
 
   depends_on "libyaml"
   depends_on "openssl"
