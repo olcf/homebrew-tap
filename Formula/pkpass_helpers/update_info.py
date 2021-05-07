@@ -21,6 +21,7 @@ def init_class(pk_url, pk_sha):
   depends_on "libyaml"
   depends_on "openssl"
   depends_on "python"
+  depends_on "rust" => :build
 """
 
 def add_resource(name, url, sha256_sum):
