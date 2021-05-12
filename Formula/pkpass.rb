@@ -1,8 +1,8 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.6.0.tar.gz"
-  sha256 "b1d3a46915c8570ee1548f34e168a08dd953300595e964db5ae875ccbbd21eeb"
+  url "https://github.com/olcf/pkpass/archive/2.6.1.tar.gz"
+  sha256 "8d46345edbe401672c5f9dd023e09d4d768bb74daf39107fcc425433c740bddf"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -29,14 +29,19 @@ class Pkpass < Formula
     sha256 "3fb8b18fd9832eaff8b13dc042a4f63b13c5d684ee069f70a23ddfc6bcb708f3"
   end
 
+  resource "mock" do
+    url "https://files.pythonhosted.org/packages/e2/be/3ea39a8fd4ed3f9a25aae18a1bff2df7a610bca93c8ede7475e32d8b73a0/mock-4.0.3.tar.gz"
+    sha256 "7d3fbbde18228f4ff2f1f119a45cdffa458b4c0dee32eb4d2bb2f82554bac7bc"
+  end
+
   resource "pem" do
     url "https://files.pythonhosted.org/packages/48/57/78c8edb8a241fe2ae8f19bc7d5fe73c2f23e648fd38408e821fb6929f784/pem-21.2.0.tar.gz"
     sha256 "c491833b092662626fd58a87375d450637d4ee94996ad9bbbd42593428e93e5a"
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/2a/09/e251b583f8f688bdaca19e04b3cac27a962f302ca4e14a10bff9ebc44525/pkpass-olcf-2.6.0.tar.gz"
-    sha256 "f8c623fd632365df9814fb4f164c638478a3cf688758379d038c66e631f801eb"
+    url "https://files.pythonhosted.org/packages/da/87/fdea998713071f87e6167d41f677af6e21c4dbda115fd1e53a731850e467/pkpass-olcf-2.6.1.tar.gz"
+    sha256 "1c72f22c884bf657a03e2a73b2e4c35ec910afbecd52dfbf61affe771840ed4f"
   end
 
   resource "pycparser" do
@@ -57,6 +62,16 @@ class Pkpass < Formula
   resource "PyYAML" do
     url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
     sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
+  end
+
+  resource "ruamel.yaml" do
+    url "https://files.pythonhosted.org/packages/62/cf/148028462ab88a71046ba0a30780357ae9e07125863ea9ca7808f1ea3798/ruamel.yaml-0.17.4.tar.gz"
+    sha256 "44bc6b54fddd45e4bc0619059196679f9e8b79c027f4131bb072e6a22f4d5e28"
+  end
+
+  resource "ruamel.yaml.clib" do
+    url "https://files.pythonhosted.org/packages/fa/a1/f9c009a633fce3609e314294c7963abe64934d972abea257dce16a15666f/ruamel.yaml.clib-0.2.2.tar.gz"
+    sha256 "2d24bd98af676f4990c4d715bcdc2a60b19c56a3fb3a763164d2d8ca0e806ba7"
   end
 
   resource "six" do

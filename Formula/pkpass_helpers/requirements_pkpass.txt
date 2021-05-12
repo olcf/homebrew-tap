@@ -2,12 +2,15 @@ cffi==1.14.5
 colored==1.4.2
 cryptography==3.4.7
 exrex==0.10.5
+mock==4.0.3
 pem==21.2.0
-pkpass-olcf==2.6.0
+pkpass-olcf==2.6.1
 pycparser==2.20
 pyperclip==1.8.2
 python-dateutil==2.8.1
 PyYAML==5.4.1
+ruamel.yaml==0.17.4
+ruamel.yaml.clib==0.2.2
 six==1.16.0
 tqdm==4.60.0
 utilitybelt==0.2.6
