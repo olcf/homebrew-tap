@@ -1,8 +1,8 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.6.7.tar.gz"
-  sha256 "42cf713bf83865932a9d474539d7b3eb72ae6d187edbb2096ea4c1fb86c7b21a"
+  url "https://github.com/olcf/pkpass/archive/2.7.0.tar.gz"
+  sha256 "7ee952112667e82e0110670586ddfdd88692f2c8d0bc23ffc83f5f4596cb1d8d"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -29,6 +29,16 @@ class Pkpass < Formula
     sha256 "3fb8b18fd9832eaff8b13dc042a4f63b13c5d684ee069f70a23ddfc6bcb708f3"
   end
 
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/0c/10/754e21b5bea89d0e73f99d60c83754df7cc64db74f47d98ab187669ce341/greenlet-1.1.2.tar.gz"
+    sha256 "e30f5ea4ae2346e62cedde8794a56858a67b878dd79f7df76a0767e356b1744a"
+  end
+
+  resource "importlib-metadata" do
+    url "https://files.pythonhosted.org/packages/50/05/fef7fbb7e781e0632ebba4e6e37bcc88b9615e76338850dc31435091ddc0/importlib_metadata-4.10.0.tar.gz"
+    sha256 "92a8b58ce734b2a4494878e0ecf7d79ccd7a128b5fc6014c401e0b61f006f0f6"
+  end
+
   resource "mock" do
     url "https://files.pythonhosted.org/packages/e2/be/3ea39a8fd4ed3f9a25aae18a1bff2df7a610bca93c8ede7475e32d8b73a0/mock-4.0.3.tar.gz"
     sha256 "7d3fbbde18228f4ff2f1f119a45cdffa458b4c0dee32eb4d2bb2f82554bac7bc"
@@ -40,8 +50,8 @@ class Pkpass < Formula
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/e3/8e/6d8a59fb9341740338ddab58a4f838553d70ef6ab5dadf3bce2cad9c718d/pkpass-olcf-2.6.7.tar.gz"
-    sha256 "c647ed6e7ce0ace2669583bd7fe355b758a99fe08aaca9702bca9017356657b4"
+    url "https://files.pythonhosted.org/packages/cd/36/2e90c8c3286cb1cb4174f3efc2dbed243151e5332ba45714507dd54e67d1/pkpass-olcf-2.7.0.tar.gz"
+    sha256 "9e71cff2815b909f9f6f914ddc6ed7a39412a04340c10eedb79309f308bc626c"
   end
 
   resource "pycparser" do
@@ -79,14 +89,29 @@ class Pkpass < Formula
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
+  resource "SQLAlchemy" do
+    url "https://files.pythonhosted.org/packages/16/d6/5ca70d8ab5bc99087524fbf0b7e3cd8c19ce61ad7df27c522141a0670413/SQLAlchemy-1.4.27.tar.gz"
+    sha256 "d768359daeb3a86644f3854c6659e4496a3e6bba2b4651ecc87ce7ad415b320c"
+  end
+
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/35/35/bd5af89c97ad5177ed234d9e79d01a984f8b5226b8ffc8b5d3c4fc8e157d/tqdm-4.60.0.tar.gz"
     sha256 "ebdebdb95e3477ceea267decfc0784859aa3df3e27e22d23b83e9b272bf157ae"
   end
 
+  resource "typing_extensions" do
+    url "https://files.pythonhosted.org/packages/0d/4a/60ba3706797b878016f16edc5fbaf1e222109e38d0fa4d7d9312cb53f8dd/typing_extensions-4.0.1.tar.gz"
+    sha256 "4ca091dea149f945ec56afb48dae714f21e8692ef22a395223bcd328961b6a0e"
+  end
+
   resource "utilitybelt" do
     url "https://files.pythonhosted.org/packages/ab/31/343ef1df18ffe822f02b4ca879d1f406275d3187040ac724bcf9158e4669/utilitybelt-0.2.6.tar.gz"
     sha256 "dafdb6a2dbb32e71d67a9cd35afd7c2e4993ec094e7ddb547df4cf46788770a4"
+  end
+
+  resource "zipp" do
+    url "https://files.pythonhosted.org/packages/02/bf/0d03dbdedb83afec081fefe86cae3a2447250ef1a81ac601a9a56e785401/zipp-3.6.0.tar.gz"
+    sha256 "71c644c5369f4a6e07636f0aa966270449561fcea2e3d6747b8d23efaa9d7832"
   end
 
   resource "pyseltongue" do

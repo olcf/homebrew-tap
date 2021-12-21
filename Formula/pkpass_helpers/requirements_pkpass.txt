@@ -2,9 +2,11 @@ cffi==1.15.0
 colored==1.4.2
 cryptography==3.4.7
 exrex==0.10.5
+greenlet==1.1.2
+importlib-metadata==4.10.0
 mock==4.0.3
 pem==21.2.0
-pkpass-olcf==2.6.7
+pkpass-olcf==2.7.0
 pycparser==2.21
 pyperclip==1.8.2
 python-dateutil==2.8.1
@@ -12,6 +14,9 @@ PyYAML==5.4.1
 ruamel.yaml==0.17.4
 ruamel.yaml.clib==0.2.2
 six==1.16.0
+SQLAlchemy==1.4.27
 tqdm==4.60.0
+typing_extensions==4.0.1
 utilitybelt==0.2.6
+zipp==3.6.0
 pyseltongue==1.0.0
