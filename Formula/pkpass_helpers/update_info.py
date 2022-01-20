@@ -7,8 +7,9 @@ import hashlib
 import requests
 from bs4 import BeautifulSoup as bs
 
-PACKAGE = '/tmp/pkpass.tar.gz'
-PACKAGE_INFO = '../pkpass.rb'
+PACKAGE = "/tmp/pkpass.tar.gz"
+PACKAGE_INFO = "../pkpass.rb"
+
 
 def init_class(pk_url, pk_sha):
     """return base information string"""
@@ -24,6 +25,7 @@ def init_class(pk_url, pk_sha):
   depends_on "rust" => :build
 """
 
+
 def add_resource(name, url, sha256_sum):
     """returns resource string"""
     return f"""
@@ -31,6 +33,7 @@ def add_resource(name, url, sha256_sum):
     url "{url}"
     sha256 "{sha256_sum}"
   end"""
+
 
 def close_class():
     """return closing statement string"""
@@ -49,45 +52,54 @@ def close_class():
 end
 """
 
+
 def get_url_and_sha(package_name, version=None):
     """return url and sha as tuple"""
-    resource = "%s/%s/" % (
-        package_name.strip(),
-        version.strip()
-    ) if version else "%s/" % package_name.strip()
-    name = "https://pypi.org/project/%s" % resource
+    # resource = (
+    #     "%s/%s/" % (package_name.strip(), version.strip())
+    #     if version
+    #     else "%s/" % package_name.strip()
+    # )
+    resource = (
+        f"{package_name.strip()}/{version.strip()}"
+        if version
+        else f"{package_name.strip()}"
+    )
+    name = f"https://pypi.org/project/{resource}"
     html_page = requests.get(name).text
-    bs_parse = bs(html_page, 'html.parser')
-    parsed = bs_parse.find_all(class_="table table--downloads")[0].find_all('a')
+    bs_parse = bs(html_page, "html.parser")
+    parsed = bs_parse.find_all(class_="table table--downloads")[0].find_all("a")
     ret_url = None
     ret_hash = None
     hash_anchor = None
     for package in parsed:
-        if package['href'].endswith(".tar.gz"):
-            ret_url = package['href']
-            hash_anchor = parsed[parsed.index(package) + 1]['href'].split("#")[1]
+        if package["href"].endswith(".tar.gz"):
+            ret_url = package["href"]
+            hash_anchor = parsed[parsed.index(package) + 1]["href"].split("#")[1]
 
     hash_div = bs_parse.find(id=hash_anchor)
-    for table_row in hash_div.find_all('tr'):
-        header = table_row.find('th')
+    for table_row in hash_div.find_all("tr"):
+        header = table_row.find("th")
         if header.text == "SHA256":
-            ret_hash = table_row.find_all('code')[0].text
+            ret_hash = table_row.find_all("code")[0].text
     return (ret_url, ret_hash)
+
 
 def build_full_file():
     """Create the full rb file"""
     pkpass_url = get_newest_pkpass_url()
     get_url_to_file(pkpass_url, PACKAGE)
     file_contents = init_class(pkpass_url, sha256(PACKAGE))
-    with open('requirements_pkpass.txt') as pkreq:
+    with open("requirements_pkpass.txt", "r", encoding="ASCII") as pkreq:
         for line in pkreq.readlines():
             package, version = line.strip().split("==")
             url, sha = get_url_and_sha(package, version)
             file_contents += add_resource(package, url, sha) + "\n"
     file_contents += close_class()
 
-    with open(PACKAGE_INFO, 'w') as pack_info:
+    with open(PACKAGE_INFO, "w", encoding="UTF-8") as pack_info:
         pack_info.write(file_contents)
+
 
 def sha256(filename):
     """Calc hash of file"""
@@ -96,6 +108,7 @@ def sha256(filename):
         for byte_block in iter(lambda: fname.read(4096), b""):
             sha256_hash.update(byte_block)
     return sha256_hash.hexdigest()
+
 
 def get_url_to_file(url, file_name):
     """Get tar.gz release from url"""
@@ -106,6 +119,7 @@ def get_url_to_file(url, file_name):
         # write to file
         file.write(response.content)
 
+
 def get_newest_pkpass_url():
     """Get newest package"""
     tag_name = requests.get(
@@ -113,9 +127,11 @@ def get_newest_pkpass_url():
     ).json()["tag_name"]
     return f"https://github.com/olcf/pkpass/archive/{tag_name}.tar.gz"
 
+
 def main():
     """Controller"""
     build_full_file()
+
 
 if __name__ == "__main__":
     main()
