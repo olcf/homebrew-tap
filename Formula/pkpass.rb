@@ -1,8 +1,8 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.7.3.tar.gz"
-  sha256 "0babdb2a81bfd88a7b11e2bc88155320bcf6a3561a9d6eb3e8f60c528bd2dddb"
+  url "https://github.com/olcf/pkpass/archive/2.7.4.tar.gz"
+  sha256 "4ebac3d96195d214227659971bb292dc69b97b79c8b24c524d86da44e4753b92"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -15,13 +15,13 @@ class Pkpass < Formula
   end
 
   resource "colored" do
-    url "https://files.pythonhosted.org/packages/b2/16/04827e24c14266d9161bd86bad50069fea453fa006c3d2b31da39251184a/colored-1.4.2.tar.gz"
-    sha256 "056fac09d9e39b34296e7618897ed1b8c274f98423770c2980d829fd670955ed"
+    url "https://files.pythonhosted.org/packages/f4/57/fe3e4e96efa3c68d3781a0903de0933ea2afa744852d907b290a2cb2294e/colored-1.4.3.tar.gz"
+    sha256 "b7b48b9f40e8a65bbb54813d5d79dd008dc8b8c5638d5bbfd30fc5a82e6def7a"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/9b/77/461087a514d2e8ece1c975d8216bc03f7048e6090c5166bc34115afdaa53/cryptography-3.4.7.tar.gz"
-    sha256 "3d10de8116d25649631977cb37da6cbdd2d6fa0e0281d014a5b7d337255ca713"
+    url "https://files.pythonhosted.org/packages/f9/4b/1cf8e281f7ae4046a59e5e39dd7471d46db9f61bb564fddbff9084c4334f/cryptography-36.0.1.tar.gz"
+    sha256 "53e5c1dc3d7a953de055d77bef2ff607ceef7a2aac0353b5d630ab67f7423638"
   end
 
   resource "exrex" do
@@ -32,11 +32,6 @@ class Pkpass < Formula
   resource "greenlet" do
     url "https://files.pythonhosted.org/packages/0c/10/754e21b5bea89d0e73f99d60c83754df7cc64db74f47d98ab187669ce341/greenlet-1.1.2.tar.gz"
     sha256 "e30f5ea4ae2346e62cedde8794a56858a67b878dd79f7df76a0767e356b1744a"
-  end
-
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/f8/41/8ffb059708359ea14a3ec74a99a2bf0cd44a0c983a0c480d9eb7a69438bb/importlib_metadata-4.10.1.tar.gz"
-    sha256 "951f0d8a5b7260e9db5e41d429285b5f451e928479f19d80818878527d36e95e"
   end
 
   resource "mock" do
@@ -50,8 +45,8 @@ class Pkpass < Formula
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/3c/71/0a8178f1b1318c161abdfccdecb76b0604e70b367cabf31818e583c34383/pkpass-olcf-2.7.3.tar.gz"
-    sha256 "dc8d7bf4052a972d3c17a37fd222c34a09e9dbfe9a60a0dfab62fb1f4870597e"
+    url "https://files.pythonhosted.org/packages/b5/8c/430db717aa3ef257cb0cc2a1ac7d950dd29e8185eef65a700388115c64e7/pkpass-olcf-2.7.4.tar.gz"
+    sha256 "6866dac2d3dc27064f615da4f702c9d2dc683169a889a709d6f513113b634e6c"
   end
 
   resource "pycparser" do
@@ -65,23 +60,23 @@ class Pkpass < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
-    sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
+    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
+    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
+    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
+    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "ruamel.yaml" do
-    url "https://files.pythonhosted.org/packages/62/cf/148028462ab88a71046ba0a30780357ae9e07125863ea9ca7808f1ea3798/ruamel.yaml-0.17.4.tar.gz"
-    sha256 "44bc6b54fddd45e4bc0619059196679f9e8b79c027f4131bb072e6a22f4d5e28"
+    url "https://files.pythonhosted.org/packages/2d/b1/b672cbe8be9ea09d85d2be8c3693811362295aa8483849e85b41caaadb85/ruamel.yaml-0.17.20.tar.gz"
+    sha256 "4b8a33c1efb2b443a93fcaafcfa4d2e445f8e8c29c528d9f5cdafb7cc9e4004c"
   end
 
   resource "ruamel.yaml.clib" do
-    url "https://files.pythonhosted.org/packages/fa/a1/f9c009a633fce3609e314294c7963abe64934d972abea257dce16a15666f/ruamel.yaml.clib-0.2.2.tar.gz"
-    sha256 "2d24bd98af676f4990c4d715bcdc2a60b19c56a3fb3a763164d2d8ca0e806ba7"
+    url "https://files.pythonhosted.org/packages/8b/25/08e5ad2431a028d0723ca5540b3af6a32f58f25e83c6dda4d0fcef7288a3/ruamel.yaml.clib-0.2.6.tar.gz"
+    sha256 "4ff604ce439abb20794f05613c374759ce10e3595d1867764dd1ae675b85acbd"
   end
 
   resource "six" do
@@ -90,18 +85,13 @@ class Pkpass < Formula
   end
 
   resource "SQLAlchemy" do
-    url "https://files.pythonhosted.org/packages/16/d6/5ca70d8ab5bc99087524fbf0b7e3cd8c19ce61ad7df27c522141a0670413/SQLAlchemy-1.4.27.tar.gz"
-    sha256 "d768359daeb3a86644f3854c6659e4496a3e6bba2b4651ecc87ce7ad415b320c"
+    url "https://files.pythonhosted.org/packages/3a/42/923c4f9b9aa0c88a616f61f05ee5d2237ee782de86ae84d9bd5338ec8ff2/SQLAlchemy-1.4.30.tar.gz"
+    sha256 "531496dbb382a8f07fc0a58642f2a1916d80050de7c4b2b58f06c0f7587ab931"
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/35/35/bd5af89c97ad5177ed234d9e79d01a984f8b5226b8ffc8b5d3c4fc8e157d/tqdm-4.60.0.tar.gz"
-    sha256 "ebdebdb95e3477ceea267decfc0784859aa3df3e27e22d23b83e9b272bf157ae"
-  end
-
-  resource "typing_extensions" do
-    url "https://files.pythonhosted.org/packages/0d/4a/60ba3706797b878016f16edc5fbaf1e222109e38d0fa4d7d9312cb53f8dd/typing_extensions-4.0.1.tar.gz"
-    sha256 "4ca091dea149f945ec56afb48dae714f21e8692ef22a395223bcd328961b6a0e"
+    url "https://files.pythonhosted.org/packages/e3/c1/b3e42d5b659ca598508e2a9ef315d5eef0a970f874ef9d3b38d4578765bd/tqdm-4.62.3.tar.gz"
+    sha256 "d359de7217506c9851b7869f3708d8ee53ed70a1b8edbba4dbcb47442592920d"
   end
 
   resource "utilitybelt" do
@@ -109,14 +99,9 @@ class Pkpass < Formula
     sha256 "dafdb6a2dbb32e71d67a9cd35afd7c2e4993ec094e7ddb547df4cf46788770a4"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/94/64/3115548d41cb001378099cb4fc6a6889c64ef43ac1b0e68c9e80b55884fa/zipp-3.7.0.tar.gz"
-    sha256 "9f50f446828eb9d45b267433fd3e9da8d801f614129124863f9c51ebceafb87d"
-  end
-
   resource "pyseltongue" do
-    url "https://files.pythonhosted.org/packages/c2/a7/c04f531ea1144cfe1c40a0ff1d6a9885cb7142466f481d59653c219a81a8/pyseltongue-1.0.0.tar.gz"
-    sha256 "6975d656214d3524b3ede9f204daa77a81ce686f8ae45f78b841ef23f23cf5d6"
+    url "https://files.pythonhosted.org/packages/5b/35/21aaf074de00a29b45e1ee423c952a1fa3966c14bfa7cb6bb5e7cc4ca06e/pyseltongue-1.0.1.tar.gz"
+    sha256 "d1c931422b8acf07d2f2b5b9e2f45c99388b819fe928345ac516cf9ab840daf4"
   end
 
   def install

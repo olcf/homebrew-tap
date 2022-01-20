@@ -23,7 +23,7 @@ jobs:
       - name: gather requirements
         run: |
           python -m pip install --upgrade pip pkpass-olcf
-          python -m pip freeze | grep -v pyseltongue > Formula/pkpass_helpers/requirements_pkpass.txt
+          python -m pip freeze | grep -v pyseltongue | grep -v pkg_resources > Formula/pkpass_helpers/requirements_pkpass.txt
           python -m pip freeze | grep pyseltongue >> Formula/pkpass_helpers/requirements_pkpass.txt
         # pyseltongue needs to be installed last, and since brew doesn't let pip do it's job
         # then we have to force brew to act a bit more like pip
