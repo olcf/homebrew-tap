@@ -4,8 +4,7 @@ Ruby is a useless language that I cant get working on my computer, this is a sho
 be used to fix the packaging info beautifulsoup is used for pypi stuff...
 """
 import hashlib
-import requests
-from bs4 import BeautifulSoup as bs
+from requests import get
 
 PACKAGE = "/tmp/pkpass.tar.gz"
 PACKAGE_INFO = "../pkpass.rb"
@@ -52,36 +51,16 @@ def close_class():
 end
 """
 
-
-def get_url_and_sha(package_name, version=None):
+def get_url_and_sha(package_name, version):
     """return url and sha as tuple"""
-    # resource = (
-    #     "%s/%s/" % (package_name.strip(), version.strip())
-    #     if version
-    #     else "%s/" % package_name.strip()
-    # )
-    resource = (
-        f"{package_name.strip()}/{version.strip()}"
-        if version
-        else f"{package_name.strip()}"
-    )
-    name = f"https://pypi.org/project/{resource}"
-    html_page = requests.get(name).text
-    bs_parse = bs(html_page, "html.parser")
-    parsed = bs_parse.find_all(class_="table table--downloads")[0].find_all("a")
-    ret_url = None
-    ret_hash = None
-    hash_anchor = None
-    for package in parsed:
-        if package["href"].endswith(".tar.gz"):
-            ret_url = package["href"]
-            hash_anchor = parsed[parsed.index(package) + 1]["href"].split("#")[1]
-
-    hash_div = bs_parse.find(id=hash_anchor)
-    for table_row in hash_div.find_all("tr"):
-        header = table_row.find("th")
-        if header.text == "SHA256":
-            ret_hash = table_row.find_all("code")[0].text
+    url = f"https://pypi.org/pypi/{package_name}/json"
+    found_release = None
+    for release in get(url).json()['releases'][version]:
+        if release['packagetype'] == 'sdist':
+            found_release = release
+            break
+    ret_hash = found_release['digests']['sha256']
+    ret_url = found_release['url']
     return (ret_url, ret_hash)
 
 
@@ -115,14 +94,14 @@ def get_url_to_file(url, file_name):
     # open in binary mode
     with open(file_name, "wb") as file:
         # get request
-        response = requests.get(url)
+        response = get(url)
         # write to file
         file.write(response.content)
 
 
 def get_newest_pkpass_url():
     """Get newest package"""
-    tag_name = requests.get(
+    tag_name = get(
         "https://api.github.com/repos/olcf/pkpass/releases/latest"
     ).json()["tag_name"]
     return f"https://github.com/olcf/pkpass/archive/{tag_name}.tar.gz"
