@@ -1,8 +1,8 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.7.4.tar.gz"
-  sha256 "4ebac3d96195d214227659971bb292dc69b97b79c8b24c524d86da44e4753b92"
+  url "https://github.com/olcf/pkpass/archive/2.7.5.tar.gz"
+  sha256 "018466c4d6b88a3674c36592555468ac7482e2ab4af6ed0f31fde9a120c5b1d4"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -45,8 +45,8 @@ class Pkpass < Formula
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/b5/8c/430db717aa3ef257cb0cc2a1ac7d950dd29e8185eef65a700388115c64e7/pkpass-olcf-2.7.4.tar.gz"
-    sha256 "6866dac2d3dc27064f615da4f702c9d2dc683169a889a709d6f513113b634e6c"
+    url "https://files.pythonhosted.org/packages/98/91/be0233a458aba98d150026084379f30b4096de42f13ac9496c00f2eb468a/pkpass-olcf-2.7.5.tar.gz"
+    sha256 "1e1d58ba32c5f29b787da54f1d702e7220ffb6e5e87f780308066321f1c56ba4"
   end
 
   resource "pycparser" do
