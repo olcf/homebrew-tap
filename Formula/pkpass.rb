@@ -1,8 +1,8 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.7.5.tar.gz"
-  sha256 "018466c4d6b88a3674c36592555468ac7482e2ab4af6ed0f31fde9a120c5b1d4"
+  url "https://github.com/olcf/pkpass/archive/2.7.6.tar.gz"
+  sha256 "f5681b6b20dafe24823f5f6ea864c0fd65a0ecee14c502fb41a732ddc49a2bd9"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -45,13 +45,18 @@ class Pkpass < Formula
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/98/91/be0233a458aba98d150026084379f30b4096de42f13ac9496c00f2eb468a/pkpass-olcf-2.7.5.tar.gz"
-    sha256 "1e1d58ba32c5f29b787da54f1d702e7220ffb6e5e87f780308066321f1c56ba4"
+    url "https://files.pythonhosted.org/packages/60/78/2ec61c05d821cbc0d4dc4e98b9f02ff48a4fa4ed10d62cc26a52bf2e748e/pkpass-olcf-2.7.6.tar.gz"
+    sha256 "6c5e4f495d697eb2d7b833bf9ddbe4de5bc0e5827850a772316a0e8d6ad19d54"
   end
 
   resource "pycparser" do
     url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
     sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+  end
+
+  resource "pylibyaml" do
+    url "https://files.pythonhosted.org/packages/c9/1a/3ae773a0d4cc0b787d1b7307786c666de0729df2c4159ec964e8ba45d06d/pylibyaml-0.1.0.tar.gz"
+    sha256 "3b58dea061903c04689e35fab63ec149f7cf5e82f0808bd3425fb3ab3950623e"
   end
 
   resource "pyperclip" do
