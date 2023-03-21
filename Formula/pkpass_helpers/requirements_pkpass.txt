@@ -1,11 +1,11 @@
-cffi==1.15.0
+cffi==1.15.1
 colored==1.4.3
 cryptography==36.0.1
 exrex==0.10.5
-greenlet==1.1.2
+greenlet==2.0.2
 mock==4.0.3
 pem==21.2.0
-pkpass-olcf==2.7.6
+pkpass-olcf==2.8.0
 pycparser==2.21
 pylibyaml==0.1.0
 pyperclip==1.8.2

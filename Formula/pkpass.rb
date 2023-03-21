@@ -1,8 +1,8 @@
 class Pkpass < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/olcf/pkpass/archive/2.7.6.tar.gz"
-  sha256 "f5681b6b20dafe24823f5f6ea864c0fd65a0ecee14c502fb41a732ddc49a2bd9"
+  url "https://github.com/olcf/pkpass/archive/2.8.0.tar.gz"
+  sha256 "d3b63a91e9937a46ba48d0e007493f0893fde48e9f62b701edbf983958ac5991"
 
   depends_on "libyaml"
   depends_on "openssl"
@@ -10,8 +10,8 @@ class Pkpass < Formula
   depends_on "rust" => :build
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/00/9e/92de7e1217ccc3d5f352ba21e52398372525765b2e0c4530e6eb2ba9282a/cffi-1.15.0.tar.gz"
-    sha256 "920f0d66a896c2d99f0adbb391f990a84091179542c205fa53ce5787aff87954"
+    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
+    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "colored" do
@@ -30,8 +30,8 @@ class Pkpass < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/0c/10/754e21b5bea89d0e73f99d60c83754df7cc64db74f47d98ab187669ce341/greenlet-1.1.2.tar.gz"
-    sha256 "e30f5ea4ae2346e62cedde8794a56858a67b878dd79f7df76a0767e356b1744a"
+    url "https://files.pythonhosted.org/packages/1e/1e/632e55a04d732c8184201238d911207682b119c35cecbb9a573a6c566731/greenlet-2.0.2.tar.gz"
+    sha256 "e7c8dc13af7db097bed64a051d2dd49e9f0af495c26995c00a9ee842690d34c0"
   end
 
   resource "mock" do
@@ -45,8 +45,8 @@ class Pkpass < Formula
   end
 
   resource "pkpass-olcf" do
-    url "https://files.pythonhosted.org/packages/60/78/2ec61c05d821cbc0d4dc4e98b9f02ff48a4fa4ed10d62cc26a52bf2e748e/pkpass-olcf-2.7.6.tar.gz"
-    sha256 "6c5e4f495d697eb2d7b833bf9ddbe4de5bc0e5827850a772316a0e8d6ad19d54"
+    url "https://files.pythonhosted.org/packages/b4/6b/06f238b3405a411717693fdf1a486135a251f2f26ee7c1776a64adb5176d/pkpass-olcf-2.8.0.tar.gz"
+    sha256 "c6420a44f8e373fe26f10b85af66efedd72377f31dbde6ec9b072cdc67de75a1"
   end
 
   resource "pycparser" do
